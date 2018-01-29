@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            Mening Natijalarim
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngIf="!key">
+        <ion-item>
+            <ion-label floating>
+              Familiyangiz :
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="userin.surname"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+              Ismingiz :
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="userin.name"></ion-input>
+        </ion-item>
+    <button ion-button (click)="addUser()" block color="secondary"> Ma'lumotlarni kiritish</button>
+    </ion-card>
+</ion-content>

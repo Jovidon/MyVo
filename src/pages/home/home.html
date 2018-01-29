@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+     Mening Lug'atim
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color=light (click)="goToAdd()">
+        <ion-icon ios="ios-add-circle-outline" md="md-add-circle"></ion-icon>
+      </button>
+      <button  ion-button icon-only color=light (click)="goToTest()">
+        <ion-icon ios="ios-list-box" md="md-list-box"></ion-icon>
+      </button>
+      <button ion-button icon-only color=light (click)="goToResultPage()">
+        <ion-icon ios="ios-pulse" md="md-pulse"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+   <ion-toolbar>
+      <ion-searchbar  placeholder="So'z izlash..." animated [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+      <ion-buttons end>
+      <button ion-button icon-only color=secondary (click)="startListening()">
+        <ion-icon ios="ios-mic" md="md-mic"></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content  padding>
+    <div *ngIf="searching" class="spinner-container">
+        <ion-spinner name="circles"></ion-spinner>
+    </div>
+  <ion-list *ngIf="task">
+    <ion-item-sliding *ngFor="let product of task">
+      <ion-item nopadding (click)="viewProduct(product)">
+        <h2 class="slide-in-both-ways">  {{product.name}} </h2>
+      </ion-item >
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="editProduct(product)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteProduct(product)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+          <button ion-button color="light" (click)="speakSentence(product.name)">
+              <ion-icon ios="ios-volume-up" md="md-volume-up"></ion-icon>
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> 
+</ion-content>

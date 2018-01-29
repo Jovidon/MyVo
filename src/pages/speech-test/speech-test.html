@@ -1,0 +1,24 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>SpeechTest</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h4>Translate the word into English with your speech :</h4>
+
+   <p> {{que}} </p>
+   <button ion-button icon-only color=secondary (click)="startListening()">
+      <ion-icon ios="ios-mic" md="md-mic"></ion-icon>
+    </button>
+   <ion-label *ngFor="let match of matches">
+     {{match}}
+   </ion-label>
+   <ion-col offset-4>
+   <button ion-button color="secondary" round (click)="checkTest()"> Check</button>
+   </ion-col>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="secondary">
+     <ion-title>{{task.name}}</ion-title>
+   </ion-navbar>
+</ion-header>
+ <ion-content padding >
+      <ion-row>
+       <ion-toolbar>
+          <h2 class="slide-in-both-ways">{{task.name}}</h2>
+          <div class="slide-in-both-ways">
+          <button ion-button color="secondary" (click)="Speak()">
+            <ion-icon ios="ios-volume-up" md="md-volume-up"></ion-icon>
+          </button>
+        </div>
+       </ion-toolbar>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h2 class="slide-in-both-ways"> {{task.type}} </h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-toolbar>
+         <h2  class="slide-in-both-ways">{{task.date}}</h2>
+         <div class="slide-in-both-ways">
+          <button ion-button color="secondary" (click)="speakSentence()">
+            <ion-icon ios="ios-volume-up" md="md-volume-up"></ion-icon>
+          </button>
+        </div>
+        </ion-toolbar>
+        </ion-row>
+ </ion-content>

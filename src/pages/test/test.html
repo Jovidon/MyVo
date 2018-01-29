@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Testga xush kelibsiz!</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="light" (click)="startTest()">
+          <ion-icon ios="ios-help-circle-outline" md="md-help-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content  padding>
+  <div *ngIf="task">
+    <h1 class="slide-in-both-ways">Quyidagi so'zning o'zbekcha tarjimasini yozing </h1>
+    <ion-item>
+      <ion-label floating> {{que}}</ion-label>
+      <ion-input type="text" [(ngModel)]="ans" required=""></ion-input>
+    </ion-item>
+    <button ion-button block color="secondary" (click)="submitTest()">Javobni yuborish</button>
+  </div>
+</ion-content>

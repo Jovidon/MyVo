@@ -1,0 +1,50 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Natijalar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding>
+ 
+   <!-- <h4 class="slide-in-both-ways" >Lug'atdagi jami so'zlar soni : {{wordcnt}} </h4>
+    <h4 class="slide-in-both-ways" >Testlardan olingan jami baho : {{gr}}</h4>
+	 -->
+		<button ion-button full (click)="getPermission()">Get Permission</button>
+		<button ion-button full (click)="startListening()">Start Listening</button>
+		<button ion-button full (click)="stopListening()">Stop Listening</button>
+	 	<ion-card>
+			<ion-card-header>This is what I understood...</ion-card-header>
+			<ion-card-content>
+				<ion-list>
+					<ion-item *ngFor="let match of matches">
+						{{ match }}
+					</ion-item>
+				</ion-list>
+			</ion-card-content>
+		</ion-card>
+
+		<ion-list>
+			<ion-item *ngFor="let table of timeTable"> 
+			 <ion-card *ngIf="table['Day']===day">
+				<h1>{{table['DayUzb']}}</h1>
+				<h4><ion-col>{{table['firstPair']}}</ion-col><ion-col>{{table['firstPairTeacher']}}</ion-col><ion-col>{{table['firstPairAudithory']}}</ion-col><ion-col>{{table['firstPairType']}}</ion-col></h4>
+				<h4><ion-col>{{table['secondPair']}}</ion-col><ion-col>{{table['secondPairTeacher']}}</ion-col><ion-col>{{table['secondPairAudithory']}}</ion-col><ion-col>{{table['secondPairType']}}</ion-col></h4>
+				<h4><ion-col>{{table['thirdPair']}}</ion-col><ion-col>{{table['thirdPairTeacher']}}</ion-col><ion-col>{{table['thirdPairAudithory']}}</ion-col><ion-col>{{table['thirdPairType']}}</ion-col></h4>
+			 </ion-card>	
+			</ion-item>
+		</ion-list>
+		<ion-list>
+				<ion-item *ngFor="let table of timeTable"> 
+				 <ion-card>
+					<h1>{{table['DayUzb']}}</h1>
+					<h4><ion-col>{{table['firstPair']}}</ion-col><ion-col>{{table['firstPairTeacher']}}</ion-col><ion-col>{{table['firstPairAudithory']}}</ion-col><ion-col>{{table['firstPairType']}}</ion-col></h4>
+					<h4><ion-col>{{table['secondPair']}}</ion-col><ion-col>{{table['secondPairTeacher']}}</ion-col><ion-col>{{table['secondPairAudithory']}}</ion-col><ion-col>{{table['secondPairType']}}</ion-col></h4>
+					<h4><ion-col>{{table['thirdPair']}}</ion-col><ion-col>{{table['thirdPairTeacher']}}</ion-col><ion-col>{{table['thirdPairAudithory']}}</ion-col><ion-col>{{table['thirdPairType']}}</ion-col></h4>
+				 </ion-card>	
+				</ion-item>
+			</ion-list>
+</ion-content>
